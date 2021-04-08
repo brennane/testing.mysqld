@@ -144,9 +144,12 @@ class Mysqld(Database):
                 raise RuntimeError("failed to spawn mysql_install_db: %r" % exc)
 
     def get_server_commandline(self):
+        params = self.dsn()
+        user =' root'
+        user = params['user']
         return [self.mysqld,
-                '--defaults-file=%s/etc/my.cnf' % self.base_dir,
-                '--user=root']
+                f'--defaults-file={self.base_dir}/etc/my.cnf',
+                f'--user={user}']
 
     def is_server_available(self):
         return os.path.exists(self.my_cnf['pid-file'])
