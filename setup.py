@@ -18,21 +18,22 @@ classifiers = [
     "Topic :: Software Development :: Testing",
 ]
 
-install_requires = ['testing.common.database >= 1.1.0', 'pymysql']
+install_requires = ['testing.common.database @ git+https://github.com/brennane/testing.common.database@master#egg=testing.common.database',
+                    'pymysql']
 if sys.version_info < (2, 7):
     install_requires.append('unittest2')
 
 
 setup(
     name='testing.mysqld',
-    version='1.4.0',
+    version='1.4.1',
     description='automatically setups a mysqld instance in a temporary directory, and destroys it after testing',
     long_description=open('README.rst').read(),
     classifiers=classifiers,
     keywords=[],
-    author='Takeshi Komiya',
-    author_email='i.tkomiya at gmail.com',
-    url='https://github.com/tk0miya/testing.mysqld',
+    author='Takeshi Komiya (ed. B. Evans)',
+    author_email='fw-be-github @ wumpus dot org',
+    url='https://github.com/brennane/testing.mysqld',
     license='Apache License 2.0',
     packages=find_packages('src'),
     package_dir={'': 'src'},

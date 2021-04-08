@@ -11,11 +11,13 @@
 
 Install
 =======
-Use easy_install (or pip)::
+This is _not_ the official PIP build; I wanted a locked version of this repo
+for some testing that works on python 3.7+.  If you want this repo use the
+following PIP call::
 
-   $ easy_install testing.mysqld
+   $ pip install 'testing.mysqld@git+https://github.com/brennane/testing.mysqld.git@master'
 
-And ``testing.mysqld`` requires MySQL server in your PATH.
+Note that ``testing.mysqld`` requires MySQL server in your PATH.
 
 
 Usage
@@ -130,6 +132,13 @@ Apache License 2.0
 
 History
 =======
+
+1.4.1 (2021-04-08)
+-------------------
+* brennane variant
+* Merge in changes from tek08 repo to remove mysql_install_db dependency
+* Remove the ``--user=root`` in the get-server-commandline function
+* Lock testing.common.database to github version
 
 1.4.0 (2016-08-20)
 -------------------
